@@ -17,7 +17,7 @@ Senja is targeted at Python 2.6.  This is specifically because there are still m
 Senja is composed of the following components:
 
 1. Tasks
-A Task is the smallest unit of work.  A task might consist of checking for a file in a directory, getting the contents of a ZIP file, running a database query, or calling a web service.
+A Task is the smallest unit of work.  A task might consist of checking for a file in a directory, getting the contents of a ZIP file, running a database query, or calling a web service.  Tasks can be shared among many Tests and/or Remedies.
 
 2. Tests
 A Test is a collection of Tasks that is used for diagnostic purposes.  A Test might consist of first running a Task that will retrieve a batch total via a webservice call, then another Task that looks for a file in a particular location, and if it exists, total all numeric values in a particular XML tag and compare those two values.
@@ -31,11 +31,12 @@ A Remedy is a collection of Tasks that is used to cure or alleviate an issue.  A
 5. Risk Units
 A Risk Unit is something that can break- for example, the IN224C89 batch job referenced above.  This "something" doesn't need to be one of your projects.  If your Finance department has a job F224 that will fail and page you because your job IN224C89 fails, then F224 should be included in your instance of Senja.
 
-## Alternatives?
-https://github.com/Runbook/runbook
-https://github.com/madflojo/automatron  <- This appears to be for completely automating things, Senja will also allow tests that require user input, i.e. database passwords, etc.
+## Alternatives
 
-## Resources?
+https://github.com/Runbook/runbook
+https://github.com/madflojo/automatron  (This appears to be for completely automating things, and there is no method for interactivity.  some Tasks may require the entry of login information.)
+
+## Resources
 
 https://medium.com/adobetech/self-healing-code-a-journey-through-auto-remediation-60367eea312
 
